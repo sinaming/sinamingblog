@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>蜡笔小新Zzz</title>
   
-  
+  <subtitle>天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-03T04:16:55.531Z</updated>
+  <updated>2018-05-03T11:00:28.657Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,23 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/05/03/hello-world/"/>
-    <id>http://yoursite.com/2018/05/03/hello-world/</id>
-    <published>2018-05-03T04:16:55.531Z</published>
-    <updated>2018-05-03T04:16:55.531Z</updated>
+    <title>Hexo教程</title>
+    <link href="http://yoursite.com/2018/05/03/Hexo%E6%95%99%E7%A8%8B/"/>
+    <id>http://yoursite.com/2018/05/03/Hexo教程/</id>
+    <published>2018-05-03T08:28:19.000Z</published>
+    <updated>2018-05-03T11:00:28.657Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="配置Node-js环境"><a href="#配置Node-js环境" class="headerlink" title="配置Node.js环境"></a>配置Node.js环境</h2><p><strong>Node.js: <a href="https://nodejs.org/en/#download" target="_blank" rel="noopener">Node.js官网</a></strong></p><p><img src="http://upload-images.jianshu.io/upload_images/727768-fb3a458f1555ea46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片"></p><a id="more"></a><p><strong>下载成功之后是这样的一个文件:</strong></p><p><img src="http://upload-images.jianshu.io/upload_images/727768-de9f36c841717341.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片"></p><h2 id="安装-Node-js-和npm"><a href="#安装-Node-js-和npm" class="headerlink" title="安装 Node.js 和npm"></a>安装 Node.js 和npm</h2><p><img src="http://upload-images.jianshu.io/upload_images/727768-2cf4a54b45c7bf90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片"></p><p><strong>终端下测试下Node.js是否可以使用:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure><p><strong>如果Node.js 成功安装，可以看到类似如下的信息:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v10.0.0</span><br></pre></td></tr></table></figure><p><strong>终端下测试下npm是否可以使用:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure><p><strong>如果npm成功安装，可以看到类似如下的信息:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm -v</span><br><span class="line">5.6.0</span><br></pre></td></tr></table></figure><blockquote><p>全部完成上面的配置,已经完成第一步</p></blockquote><h2 id="搭建GitHub博客"><a href="#搭建GitHub博客" class="headerlink" title="搭建GitHub博客"></a>搭建GitHub博客</h2><p>新建一个名为<code>用户名.github.io</code>的仓库,<code>用户名</code>其实就是你自己<code>GitHub用户名</code></p><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">终端中执行 npm install hexo-cli -g</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo文件夹</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate hexo server hexo g | hexo s</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">登录本地localhost:4000</span><br></pre></td></tr></table></figure><p><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg" alt="图片"></p><h2 id="配置Hexo主题"><a href="#配置Hexo主题" class="headerlink" title="配置Hexo主题"></a>配置Hexo主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository:</span><br><span class="line">            github: https://github.com/sinaming/sinaming.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
+      &lt;h2 id=&quot;配置Node-js环境&quot;&gt;&lt;a href=&quot;#配置Node-js环境&quot; class=&quot;headerlink&quot; title=&quot;配置Node.js环境&quot;&gt;&lt;/a&gt;配置Node.js环境&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Node.js: &lt;a href=&quot;https://nodejs.org/en/#download&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Node.js官网&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/727768-fb3a458f1555ea46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;图片&quot;&gt;&lt;/p&gt;
     
     </summary>
     
+      <category term="Hexo教程" scheme="http://yoursite.com/categories/Hexo%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   

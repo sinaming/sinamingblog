@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hexo教程]]></title>
+    <url>%2F2018%2F05%2F03%2FHexo%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[配置Node.js环境Node.js: Node.js官网 下载成功之后是这样的一个文件: 安装 Node.js 和npm 终端下测试下Node.js是否可以使用: 1node -v 如果Node.js 成功安装，可以看到类似如下的信息: 12$ node -vv10.0.0 终端下测试下npm是否可以使用: 1npm -v 如果npm成功安装，可以看到类似如下的信息: 12$ npm -v5.6.0 全部完成上面的配置,已经完成第一步 搭建GitHub博客新建一个名为用户名.github.io的仓库,用户名其实就是你自己GitHub用户名 安装Hexo1终端中执行 npm install hexo-cli -g 1mkdir hexo文件夹 1hexo init 1hexo generate hexo server hexo g | hexo s 1登录本地localhost:4000 配置Hexo主题12345deploy: type: git repository: github: https://github.com/sinaming/sinaming.github.io.git branch: master]]></content>
+      <categories>
+        <category>Hexo教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+</search>
