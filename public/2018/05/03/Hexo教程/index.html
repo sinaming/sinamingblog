@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/727768-de9f36c841717341.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/727768-2cf4a54b45c7bf90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg">
-<meta property="og:updated_time" content="2018-05-03T11:00:28.657Z">
+<meta property="og:updated_time" content="2018-05-04T02:38:39.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo教程">
 <meta name="twitter:description" content="配置Node.js环境Node.js: Node.js官网">
@@ -382,14 +382,52 @@
 <blockquote>
 <p>全部完成上面的配置,已经完成第一步</p>
 </blockquote>
-<h2 id="搭建GitHub博客"><a href="#搭建GitHub博客" class="headerlink" title="搭建GitHub博客"></a>搭建GitHub博客</h2><p>新建一个名为<code>用户名.github.io</code>的仓库,<code>用户名</code>其实就是你自己<code>GitHub用户名</code></p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">终端中执行 npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo文件夹</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate hexo server hexo g | hexo s</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">登录本地localhost:4000</span><br></pre></td></tr></table></figure>
-<p><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg" alt="图片"></p>
-<h2 id="配置Hexo主题"><a href="#配置Hexo主题" class="headerlink" title="配置Hexo主题"></a>配置Hexo主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository:</span><br><span class="line">            github: https://github.com/sinaming/sinaming.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h2 id="搭建GitHub博客"><a href="#搭建GitHub博客" class="headerlink" title="搭建GitHub博客"></a>搭建GitHub博客</h2><p>进入<code>GitHub</code>,我们新建一个名为<code>用户名.github.io</code>的仓库,<code>用户名</code>其实就是你自己<code>GitHub用户名</code></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ul>
+<li><p>终端中执行<code>npm install hexo-cli -g</code></p>
+</li>
+<li><p><code>桌面</code>或者<code>自己熟悉的地方</code>,通过<code>终端</code>创建mkdir<code>hexo</code>文件夹</p>
+</li>
+<li><p>进入<code>hexo</code>文件夹,执行<code>hexo init</code></p>
+</li>
+</ul>
+<p><strong>完成之后执行下面方法:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate	创建静态页面	</span><br><span class="line">hexo server	启动服务</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>缩写<code>hexo g | hexo s</code></p>
+</li>
+<li><p>登录本地<code>localhost:4000</code></p>
+</li>
+</ul>
+<p><strong> 启动服务,会显示下面页面 </strong><br><img src="http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg" alt="图片"></p>
+<ul>
+<li><p>接下来,我们就是把创建好的<code>hexo</code>项目,配置上传<code>GitHub</code>的前提条件</p>
+</li>
+<li><p>找到<code>hexo</code>文件夹下面的<code>_config.yml</code>文件</p>
+</li>
+</ul>
+<h2 id="配置Hexo主题"><a href="#配置Hexo主题" class="headerlink" title="配置Hexo主题"></a>配置Hexo主题</h2><ul>
+<li>把这段代码放置<code>_config.yml</code>文件的最后面,其中<code>GitHub用户名</code>是你自己在<code>GitHub</code>中创建的仓库对于的<code>信息</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository:</span><br><span class="line">            github: https://github.com/GitHub用户名/GitHub用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这样我们就完成了对<code>hexo</code>的基础搭建和配置</p>
+</blockquote>
+<h2 id="同步GitHub"><a href="#同步GitHub" class="headerlink" title="同步GitHub"></a>同步GitHub</h2><ul>
+<li><p>终端执行<code>npm install hexo-deployer-git --save</code></p>
+</li>
+<li><p>完成上面的全部操作,我们博客基本完成,相应的主题配置自行<code>百度</code>,<code>Google</code></p>
+</li>
+</ul>
+<p><strong>开始同步</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">hexo deployer</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>缩写<code>hexo d -g</code>执行</p>
+</li>
+<li><p>浏览器中输入<code>https://GitHub用户名.github.io</code>,如果成功会显示上面同样的页面</p>
+</li>
+</ul>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><ul>
+<li>如果你已经看到这里,说明已经完成了对博客的搭建,我们就可以开心的撸博客了!!!</li>
+</ul>
 
       
     </div>
@@ -426,6 +464,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/04/iOS偷懒-效率/" rel="prev" title="iOS偷懒_效率">
+                iOS偷懒_效率 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -499,7 +553,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -510,7 +564,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -521,7 +575,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -561,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Node-js环境"><span class="nav-number">1.</span> <span class="nav-text">配置Node.js环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Node-js-和npm"><span class="nav-number">2.</span> <span class="nav-text">安装 Node.js 和npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建GitHub博客"><span class="nav-number">3.</span> <span class="nav-text">搭建GitHub博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">4.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Hexo主题"><span class="nav-number">5.</span> <span class="nav-text">配置Hexo主题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Node-js环境"><span class="nav-number">1.</span> <span class="nav-text">配置Node.js环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Node-js-和npm"><span class="nav-number">2.</span> <span class="nav-text">安装 Node.js 和npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建GitHub博客"><span class="nav-number">3.</span> <span class="nav-text">搭建GitHub博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">4.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Hexo主题"><span class="nav-number">5.</span> <span class="nav-text">配置Hexo主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步GitHub"><span class="nav-number">6.</span> <span class="nav-text">同步GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">7.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>

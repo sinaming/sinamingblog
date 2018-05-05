@@ -51,37 +51,66 @@ $ npm -v
 
 ## 搭建GitHub博客
 
-新建一个名为`用户名.github.io`的仓库,`用户名`其实就是你自己`GitHub用户名`
+进入`GitHub`,我们新建一个名为`用户名.github.io`的仓库,`用户名`其实就是你自己`GitHub用户名`
 
 ## 安装Hexo
 
+- 终端中执行`npm install hexo-cli -g`
+
+- `桌面`或者`自己熟悉的地方`,通过`终端`创建mkdir`hexo`文件夹
+
+- 进入`hexo`文件夹,执行`hexo init`
+
+**完成之后执行下面方法:**
 ```
-终端中执行 npm install hexo-cli -g
+hexo generate	创建静态页面	
+hexo server	启动服务
 ```
 
-```
-mkdir hexo文件夹
-```
+- 缩写`hexo g | hexo s`
 
-```
-hexo init
-```
+- 登录本地`localhost:4000`
 
-```
-hexo generate hexo server hexo g | hexo s
-```
-
-```
-登录本地localhost:4000
-```
-
+** 启动服务,会显示下面页面 **
 ![图片](http://onq81n53u.bkt.clouddn.com/YY%E5%9B%BE%E7%89%8720180110175140.jpg)
 
+
+- 接下来,我们就是把创建好的`hexo`项目,配置上传`GitHub`的前提条件
+
+- 找到`hexo`文件夹下面的`_config.yml`文件
+
 ## 配置Hexo主题
+
+- 把这段代码放置`_config.yml`文件的最后面,其中`GitHub用户名`是你自己在`GitHub`中创建的仓库对于的`信息`
+
 ```
 deploy:
   type: git
   repository:
-            github: https://github.com/sinaming/sinaming.github.io.git
+            github: https://github.com/GitHub用户名/GitHub用户名.github.io.git
   branch: master
 ```
+
+ >这样我们就完成了对`hexo`的基础搭建和配置
+
+## 同步GitHub
+
+- 终端执行`npm install hexo-deployer-git --save`
+
+- 完成上面的全部操作,我们博客基本完成,相应的主题配置自行`百度`,`Google`
+
+**开始同步**
+```
+hexo clean
+
+hexo generate
+
+hexo deployer
+```
+
+- 缩写`hexo d -g`执行
+
+- 浏览器中输入`https://GitHub用户名.github.io`,如果成功会显示上面同样的页面
+
+## 最后
+- 如果你已经看到这里,说明已经完成了对博客的搭建,我们就可以开心的撸博客了!!!

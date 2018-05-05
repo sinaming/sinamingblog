@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Masonry自适应tableHeaderView]]></title>
+    <url>%2F2018%2F05%2F05%2FMasonry%E8%87%AA%E9%80%82%E5%BA%94tableHeaderView%2F</url>
+    <content type="text"><![CDATA[如题 从苹果开发约束,方便了我们快速适配iPhone手机,看到Masonry之后,我们就想要适配所有开发中所遇到的问题,今天就适配Masonry自适应tableHeaderView 解答如果使用frame,计算的话肯定也是可以达到相同结果的,可是麻烦,所以今天就使用Masonry来完成这个需求 首先, 我们一般都是自定义View,在这个View设置好约束 重要 这个自定义View,里面的子控件一定要有从top到bottom连起来的那一条线,就像盖房子一样的,第一个子控件到最后的个子控件,让tableHeaderView知道top到bottom的位置 自定义View代码1234567891011121314151617// 这个是第一个子控件[self addSubview:self.oneLabel];[self.oneLabel mas_makeConstraints:^(MASConstraintMaker *make) &#123; make.top.left.right.mas_equalTo(self).offset(0);&#125;];// 这个是第二个子控件[self addSubview:self.oneImageView];[self.oneImageView mas_makeConstraints:^(MASConstraintMaker *make) &#123; make.top.mas_equalTo(self.oneLabel.mas_bottom).offset(0); make.left.right.mas_equalTo(self).offset(0);&#125;];// 重点,必须设置这个约束,告诉当前view的位置[self mas_makeConstraints:^(MASConstraintMaker *make) &#123; make.bottom.mas_equalTo(self.oneImageView.mas_bottom).offset(0);&#125;]; Controller代码12345// 必须给headerView设置宽度,不然headView是不知道到底有宽self.tableView.tableHeaderView = self.headView;[self.headView mas_makeConstraints:^(MASConstraintMaker *make) &#123; make.width.equalTo(self.tableView);&#125;]; 效果图]]></content>
+      <categories>
+        <category>iOS开发</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo插入图片]]></title>
+    <url>%2F2018%2F05%2F05%2FHexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%2F</url>
+    <content type="text"><![CDATA[前言 当我们想在博客上上传图片,如果直接引用本地图片,会存在很多问题,图片损坏等 解决 在hexo文件夹中找到_config.yml里的post_asset_folder:这个选项设置为true 在hexo目录下执行这样一句话npm install hexo-asset-image --save命令,来安装一个可以上传图片的插件 命令创建hexo -n xxxx.md,执行完成之后,会在/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹 最后把图片复杂到xxxx.md的文件夹中,按照这样的方式![你想输入的替代文字](xxxx/图片名.jpg) 举例 如果完成上面操作,会实现显示自己添加的图片,说明已经完成 参考文档hexo生成博文插入图片]]></content>
+      <categories>
+        <category>Hexo教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS偷懒_效率]]></title>
+    <url>%2F2018%2F05%2F04%2FiOS%E5%81%B7%E6%87%92-%E6%95%88%E7%8E%87%2F</url>
+    <content type="text"><![CDATA[import导入pod第三方库不提示问题 选择target &gt; BuildSettings &gt; search Paths下的User Header Search Paths 双击后面的空白区域 点击”+”号添加一项:并且输入:$(PODS_ROOT),选择:recursive(会在相应的目录递归搜索文件) 添加pch文件 Xcode正确创建pch文件 选择target &gt; BuildSettings &gt; Apple LLVM 8.0 -Language下的Prefix Header(或者搜索Prefix Header) 双击后面的空白区域 点击”+”号添加一项:并且输入:$(SRCROOT)/项目中创建.pch,选择:recursive(会在相应的目录递归搜索文件) Precompile Prefix Header为YES,预编译后的pch文件缓存起来 扩展随机颜色1[UIColor colorWithRed:arc4random_uniform(255) / 255.0 green:arc4random_uniform(255) / 255.0 blue:arc4random_uniform(255) / 255.0 alpha:1]; UIView常用setNeedsDisplay和setNeedsLayoutUIView的setNeedsDisplay和setNeedsLayout方法 首先两个方法都是异步执行的。而setNeedsDisplay会调用自动调用drawRect方法，这样可以拿到UIGraphicsGetCurrentContext，就可以画画了。而setNeedsLayout会默认调用layoutSubViews，就可以处理子视图中的一些数据。 综上所诉，setNeedsDisplay方便绘图，而layoutSubViews方便出来数据。 layoutSubviews在以下情况下会被调用： init初始化不会触发layoutSubviews。 addSubview会触发layoutSubviews。 设置view的Frame会触发layoutSubviews，当然前提是frame的值设置前后发生了变化。 滚动一个UIScrollView会触发layoutSubviews。 旋转Screen会触发父UIView上的layoutSubviews事件。 改变一个UIView大小的时候也会触发父UIView上的layoutSubviews事件。 直接调用setLayoutSubviews。 drawRect在以下情况下会被调用： 如果在UIView初始化时没有设置rect大小，将直接导致drawRect不被自动调用。drawRect调用是在Controller-&gt;loadView, Controller-&gt;viewDidLoad两方法之后掉用的.所以不用担心在控制器中,这些View的drawRect就开始画了.这样可以在控制器中设置一些值给View(如果这些View draw的时候需要用到某些变量值). 该方法在调用sizeToFit后被调用，所以可以先调用sizeToFit计算出size。然后系统自动调用drawRect:方法。 通过设置contentMode属性值为UIViewContentModeRedraw。那么将在每次设置或更改frame的时候自动调用drawRect:。 直接调用setNeedsDisplay，或者setNeedsDisplayInRect:触发drawRect:，但是有个前提条件是rect不能为0。 以上1,2推荐；而3,4不提倡 drawRect方法使用注意点： 若使用UIView绘图，只能在drawRect：方法中获取相应的contextRef并绘图。如果在其他方法中获取将获取到一个invalidate的ref并且不能用于画图。drawRect：方法不能手动显示调用，必须通过调用setNeedsDisplay 或者 setNeedsDisplayInRect，让系统自动调该方法。 若使用calayer绘图，只能在drawInContext:中（类似于drawRect）绘制，或者在delegate中的相应方法绘制。同样也是调用setNeedDisplay等间接调用以上方法 若要实时画图，不能使用gestureRecognizer，只能使用touchbegan等方法来掉用setNeedsDisplay实时刷新屏幕 UIView调用 -(void)layoutSubviews -(void)layoutIfNeeded -(void)setNeedsLayout -(CGSize)sizeThatFits:(CGSize)size -(void)sizeToFit -(void)setNeedsDisplay -(void)drawRect layoutSubviews在以下情况下会被调用/被触发？？ init初始化不会触发layoutSubviews，但是是用initWithFrame进行初始化时，当rect的值 非CGRectZero时,也会触发。 addSubview会触发layoutSubviews 设置view的Frame会触发layoutSubviews，当然前提是frame的值设置前后发生了变化 滚动一个UIScrollView会触发layoutSubviews 旋转Screen会触发父UIView上的layoutSubviews事件 改变一个UIView大小的时候也会触发父UIView上的layoutSubviews事件 (在苹果的官方文档中强调) You should override this method only if the autoresizing behaviors of the subviews do not offer the behavior you want.layoutSubviews,(当我们在某个类的内部调整子视图位置时，需要调用。反过来的意思就是说：如果你想要在外部设置subviews的位置，就不要重写。) 刷新子对象布局??什么时候，需要重写？ view是系统的，不需要重写 - (void)layoutSubviews view是自定义的，需要重写 - (void)layoutSubviews -layoutSubviews方法：这个方法，默认没有做任何事情，需要子类进行重写，自定义view时，手动重写，这里面只能写subview的frame限制。 手动调用这个方法，系统默认 我们不能手动直接调用这个方法，这能通过下列两种方式，调用/触发 - (void)layoutSubviews方法 -setNeedsLayout方法： 标记为需要重新布局，告诉系统未来某个时间点异步调用。不立即刷新，但layoutSubviews一定会被调用。 -layoutIfNeeded方法：如果，有需要刷新的标记，立即调用layoutSubviews进行布局（如果没有标记，不会调用layoutSubviews） 若需要立即刷新view的frame更改：（同时调用，注意先后顺序） 先调用[view setNeedsLayout]，把标记设为需要布局 然后马上调用[view layoutIfNeeded]，实现布局 在初始化方法init..。、或者view第一次显示之前，标记总是“需要刷新”的，可以直接调用[view layoutIfNeeded] 重绘 -drawRect:(CGRect)rect方法：重写此方法，执行重绘任务 -setNeedsDisplay方法：标记为需要重绘，异步调用drawRect -setNeedsDisplayInRect:(CGRect)invalidRect方法：标记为需要局部重绘 （注意：sizeToFit会 自动调用sizeThatFits方法； sizeToFit不应该在子类中被重写，应该重写sizeThatFits） sizeThatFits传入的参数是receiver当前的size，返回一个适合的size sizeToFit可以被手动直接调用,注意(系统默认的一些控件可以通过调用sizeToFit方法使其有尺寸,egUIBarButtonItem,UITableView的组头,组尾,表头,表尾,,,……) sizeToFit和sizeThatFits方法都没有递归，对subviews也不负责，只负责自己 layoutSubviews对subviews重新布局 layoutSubviews方法调用先于drawRect setNeedsLayout在receiver标上一个需要被重新布局的标记，在系统runloop的下一个周期自动调用layoutSubviews layoutIfNeeded方法如其名，UIKit会判断该receiver是否需要layout.根据Apple官方文档,layoutIfNeeded方法应该是这样的 layoutIfNeeded遍历的不是superview链，应该是subviews链 drawRect是对receiver的重绘，能获得context setNeedDisplay在receiver标上一个需要被重新绘图的标记，在下一个draw周期自动重绘，iphone device的刷新频率是60hz，也就是1/60秒后重绘 参考文档UIView常用的一些方法小记之setNeedsDisplay和setNeedsLayout]]></content>
+      <categories>
+        <category>iOS效率</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo教程]]></title>
     <url>%2F2018%2F05%2F03%2FHexo%E6%95%99%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[配置Node.js环境Node.js: Node.js官网 下载成功之后是这样的一个文件: 安装 Node.js 和npm 终端下测试下Node.js是否可以使用: 1node -v 如果Node.js 成功安装，可以看到类似如下的信息: 12$ node -vv10.0.0 终端下测试下npm是否可以使用: 1npm -v 如果npm成功安装，可以看到类似如下的信息: 12$ npm -v5.6.0 全部完成上面的配置,已经完成第一步 搭建GitHub博客新建一个名为用户名.github.io的仓库,用户名其实就是你自己GitHub用户名 安装Hexo1终端中执行 npm install hexo-cli -g 1mkdir hexo文件夹 1hexo init 1hexo generate hexo server hexo g | hexo s 1登录本地localhost:4000 配置Hexo主题12345deploy: type: git repository: github: https://github.com/sinaming/sinaming.github.io.git branch: master]]></content>
+    <content type="text"><![CDATA[配置Node.js环境Node.js: Node.js官网 下载成功之后是这样的一个文件: 安装 Node.js 和npm 终端下测试下Node.js是否可以使用: 1node -v 如果Node.js 成功安装，可以看到类似如下的信息: 12$ node -vv10.0.0 终端下测试下npm是否可以使用: 1npm -v 如果npm成功安装，可以看到类似如下的信息: 12$ npm -v5.6.0 全部完成上面的配置,已经完成第一步 搭建GitHub博客进入GitHub,我们新建一个名为用户名.github.io的仓库,用户名其实就是你自己GitHub用户名 安装Hexo 终端中执行npm install hexo-cli -g 桌面或者自己熟悉的地方,通过终端创建mkdirhexo文件夹 进入hexo文件夹,执行hexo init 完成之后执行下面方法:12hexo generate 创建静态页面 hexo server 启动服务 缩写hexo g | hexo s 登录本地localhost:4000 启动服务,会显示下面页面 接下来,我们就是把创建好的hexo项目,配置上传GitHub的前提条件 找到hexo文件夹下面的_config.yml文件 配置Hexo主题 把这段代码放置_config.yml文件的最后面,其中GitHub用户名是你自己在GitHub中创建的仓库对于的信息 12345deploy: type: git repository: github: https://github.com/GitHub用户名/GitHub用户名.github.io.git branch: master 这样我们就完成了对hexo的基础搭建和配置 同步GitHub 终端执行npm install hexo-deployer-git --save 完成上面的全部操作,我们博客基本完成,相应的主题配置自行百度,Google 开始同步12345hexo cleanhexo generatehexo deployer 缩写hexo d -g执行 浏览器中输入https://GitHub用户名.github.io,如果成功会显示上面同样的页面 最后 如果你已经看到这里,说明已经完成了对博客的搭建,我们就可以开心的撸博客了!!!]]></content>
       <categories>
         <category>Hexo教程</category>
       </categories>
