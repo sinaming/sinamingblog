@@ -90,7 +90,7 @@
 <meta property="og:description" content="如题 从苹果开发约束,方便了我们快速适配iPhone手机,看到Masonry之后,我们就想要适配所有开发中所遇到的问题,今天就适配Masonry自适应tableHeaderView  解答如果使用frame,计算的话肯定也是可以达到相同结果的,可是麻烦,所以今天就使用Masonry来完成这个需求  首先, 我们一般都是自定义View,在这个View设置好约束">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/05/05/Masonry自适应tableHeaderView/tableHeaderView.gif">
-<meta property="og:updated_time" content="2018-05-05T08:05:52.850Z">
+<meta property="og:updated_time" content="2018-05-30T07:12:44.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Masonry自适应tableHeaderView">
 <meta name="twitter:description" content="如题 从苹果开发约束,方便了我们快速适配iPhone手机,看到Masonry之后,我们就想要适配所有开发中所遇到的问题,今天就适配Masonry自适应tableHeaderView  解答如果使用frame,计算的话肯定也是可以达到相同结果的,可是麻烦,所以今天就使用Masonry来完成这个需求  首先, 我们一般都是自定义View,在这个View设置好约束">
@@ -376,6 +376,9 @@
 </ul>
 <h2 id="自定义View代码"><a href="#自定义View代码" class="headerlink" title="自定义View代码"></a>自定义<code>View</code>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 这个是第一个子控件</span><br><span class="line">[self addSubview:self.oneLabel];</span><br><span class="line">[self.oneLabel mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.top.left.right.mas_equalTo(self).offset(0);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">// 这个是第二个子控件</span><br><span class="line">[self addSubview:self.oneImageView];</span><br><span class="line">[self.oneImageView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.top.mas_equalTo(self.oneLabel.mas_bottom).offset(0);</span><br><span class="line">    make.left.right.mas_equalTo(self).offset(0);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">// 重点,必须设置这个约束,告诉当前view的位置</span><br><span class="line">[self mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.bottom.mas_equalTo(self.oneImageView.mas_bottom).offset(0);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
 <h2 id="Controller代码"><a href="#Controller代码" class="headerlink" title="Controller代码"></a><code>Controller</code>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 必须给headerView设置宽度,不然headView是不知道到底有宽</span><br><span class="line">self.tableView.tableHeaderView = self.headView;</span><br><span class="line">[self.headView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.width.equalTo(self.tableView);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><blockquote>
+<p>如果确定子控件底部到父视图的位置,就不需要设置父视图底部位置,如果不确定底部位置就需要设置父视图底部位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[self addSubview:self.oneImageView];</span><br><span class="line">[self.oneImageView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.top.mas_equalTo(self.oneLabel.mas_bottom).offset(0);</span><br><span class="line">    make.left.right.bottom.mas_equalTo(self).offset(0);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">// 重点,必须设置这个约束,告诉当前view的位置</span><br><span class="line">//[self mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">//    make.bottom.mas_equalTo(self.oneImageView.mas_bottom).offset(0);</span><br><span class="line">//&#125;];</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 <h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="/2018/05/05/Masonry自适应tableHeaderView/tableHeaderView.gif" alt="Masonry"></p>
 
       
@@ -426,6 +429,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/08/Masonry设置UIScrollView的contentSize/" rel="prev" title="Masonry设置UIScrollView的contentSize,实现复杂页面开发">
+                Masonry设置UIScrollView的contentSize,实现复杂页面开发 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -502,7 +509,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -513,7 +520,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -564,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如题"><span class="nav-number">1.</span> <span class="nav-text">如题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解答"><span class="nav-number">2.</span> <span class="nav-text">解答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义View代码"><span class="nav-number">3.</span> <span class="nav-text">自定义View代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller代码"><span class="nav-number">4.</span> <span class="nav-text">Controller代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果图"><span class="nav-number">5.</span> <span class="nav-text">效果图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如题"><span class="nav-number">1.</span> <span class="nav-text">如题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解答"><span class="nav-number">2.</span> <span class="nav-text">解答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义View代码"><span class="nav-number">3.</span> <span class="nav-text">自定义View代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller代码"><span class="nav-number">4.</span> <span class="nav-text">Controller代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案二"><span class="nav-number">5.</span> <span class="nav-text">方案二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果图"><span class="nav-number">6.</span> <span class="nav-text">效果图</span></a></li></ol></div>
             
 
           </div>

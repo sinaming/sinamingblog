@@ -41,7 +41,6 @@ categories: "iOS开发"
 [self mas_makeConstraints:^(MASConstraintMaker *make) {
     make.bottom.mas_equalTo(self.oneImageView.mas_bottom).offset(0);
 }];
-
 ```
 
 ## `Controller`代码
@@ -51,6 +50,21 @@ self.tableView.tableHeaderView = self.headView;
 [self.headView mas_makeConstraints:^(MASConstraintMaker *make) {
     make.width.equalTo(self.tableView);
 }];
+```
+
+## 方案二
+>如果确定子控件底部到父视图的位置,就不需要设置父视图底部位置,如果不确定底部位置就需要设置父视图底部位置
+```
+[self addSubview:self.oneImageView];
+[self.oneImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.top.mas_equalTo(self.oneLabel.mas_bottom).offset(0);
+    make.left.right.bottom.mas_equalTo(self).offset(0);
+}];
+
+// 重点,必须设置这个约束,告诉当前view的位置
+//[self mas_makeConstraints:^(MASConstraintMaker *make) {
+//    make.bottom.mas_equalTo(self.oneImageView.mas_bottom).offset(0);
+//}];
 ```
 
 ## 效果图
