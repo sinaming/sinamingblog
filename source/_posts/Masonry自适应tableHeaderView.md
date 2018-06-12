@@ -54,6 +54,7 @@ self.tableView.tableHeaderView = self.headView;
 
 ## 方案二
 >如果确定子控件底部到父视图的位置,就不需要设置父视图底部位置,如果不确定底部位置就需要设置父视图底部位置
+
 ```
 [self addSubview:self.oneImageView];
 [self.oneImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -65,6 +66,27 @@ self.tableView.tableHeaderView = self.headView;
 //[self mas_makeConstraints:^(MASConstraintMaker *make) {
 //    make.bottom.mas_equalTo(self.oneImageView.mas_bottom).offset(0);
 //}];
+```
+
+## 方案三
+> 如果出现bug先设置好`Masonry`的`TableHeadView`,再调用`View`的`layoutIfNeeded`
+
+```
+[self.view addSubview:self.tableView];
+[self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.edges.mas_equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+}];
+
+
+self.tableView.tableHeaderView = self.headView;
+[self.headView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.width.equalTo(self.tableView);
+}];
+
+[self.view setNeedsLayout];
+[self.view layoutIfNeeded];
+
+self.tableView.tableHeaderView = self.headView;
 ```
 
 ## 效果图

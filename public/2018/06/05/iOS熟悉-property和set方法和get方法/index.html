@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="如题 从苹果开发约束,方便了我们快速适配iPhone手机,看到Masonry之后,我们就想要适配所有开发中所遇到的问题,今天就适配Masonry自适应tableHeaderView  解答如果使用frame,计算的话肯定也是可以达到相同结果的,可是麻烦,所以今天就使用Masonry来完成这个需求  首先, 我们一般都是自定义View,在这个View设置好约束">
+<meta name="description" content="前言@property (nonatomic, assign) CGFloat height;  @property声明了成员变量，没有自己去写它的set方法和get方法,Xcode系统会自动生成set和get方法。同时生成一个下划线成员变量   你调用的时候，赋值的值是多少就是多少  123Person *p = [[Person alloc] init];p.height = 170.0;NS">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Masonry自适应tableHeaderView">
-<meta property="og:url" content="http://yoursite.com/2018/05/05/Masonry自适应tableHeaderView/index.html">
+<meta property="og:title" content="iOS熟悉@property和set方法和get方法">
+<meta property="og:url" content="http://yoursite.com/2018/06/05/iOS熟悉-property和set方法和get方法/index.html">
 <meta property="og:site_name" content="蜡笔小新Zzz">
-<meta property="og:description" content="如题 从苹果开发约束,方便了我们快速适配iPhone手机,看到Masonry之后,我们就想要适配所有开发中所遇到的问题,今天就适配Masonry自适应tableHeaderView  解答如果使用frame,计算的话肯定也是可以达到相同结果的,可是麻烦,所以今天就使用Masonry来完成这个需求  首先, 我们一般都是自定义View,在这个View设置好约束">
+<meta property="og:description" content="前言@property (nonatomic, assign) CGFloat height;  @property声明了成员变量，没有自己去写它的set方法和get方法,Xcode系统会自动生成set和get方法。同时生成一个下划线成员变量   你调用的时候，赋值的值是多少就是多少  123Person *p = [[Person alloc] init];p.height = 170.0;NS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/05/05/Masonry自适应tableHeaderView/tableHeaderView.gif">
-<meta property="og:updated_time" content="2018-06-08T04:24:56.693Z">
+<meta property="og:updated_time" content="2018-06-08T09:02:49.754Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Masonry自适应tableHeaderView">
-<meta name="twitter:description" content="如题 从苹果开发约束,方便了我们快速适配iPhone手机,看到Masonry之后,我们就想要适配所有开发中所遇到的问题,今天就适配Masonry自适应tableHeaderView  解答如果使用frame,计算的话肯定也是可以达到相同结果的,可是麻烦,所以今天就使用Masonry来完成这个需求  首先, 我们一般都是自定义View,在这个View设置好约束">
-<meta name="twitter:image" content="http://yoursite.com/2018/05/05/Masonry自适应tableHeaderView/tableHeaderView.gif">
+<meta name="twitter:title" content="iOS熟悉@property和set方法和get方法">
+<meta name="twitter:description" content="前言@property (nonatomic, assign) CGFloat height;  @property声明了成员变量，没有自己去写它的set方法和get方法,Xcode系统会自动生成set和get方法。同时生成一个下划线成员变量   你调用的时候，赋值的值是多少就是多少  123Person *p = [[Person alloc] init];p.height = 170.0;NS">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/05/Masonry自适应tableHeaderView/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/05/iOS熟悉-property和set方法和get方法/"/>
 
 
 
 
 
-  <title>Masonry自适应tableHeaderView | 蜡笔小新Zzz</title>
+  <title>iOS熟悉@property和set方法和get方法 | 蜡笔小新Zzz</title>
   
 
 
@@ -273,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/Masonry自适应tableHeaderView/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/iOS熟悉-property和set方法和get方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="蜡笔小新Zzz">
@@ -290,7 +288,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Masonry自适应tableHeaderView</h1>
+          <h1 class="post-title" itemprop="name headline">iOS熟悉@property和set方法和get方法</h1>
         
 
         <div class="post-meta">
@@ -302,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T15:40:45+08:00">
-                2018-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-05T15:37:20+08:00">
+                2018-06-05
               </time>
             
 
@@ -325,8 +323,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
+                  <a href="/categories/iOS基础/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS基础</span>
                   </a>
                 </span>
 
@@ -362,29 +360,43 @@
       
 
       
-        <h2 id="如题"><a href="#如题" class="headerlink" title="如题"></a>如题</h2><blockquote>
-<p>从苹果开发约束,方便了我们快速适配iPhone手机,看到<code>Masonry</code>之后,我们就想要适配所有开发中所遇到的问题,今天就适配<code>Masonry</code>自适应<code>tableHeaderView</code></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>@property (nonatomic, assign) CGFloat height;</code></p>
+<blockquote>
+<p><code>@property</code>声明了成员变量，没有自己去写它的<strong><code>set</code></strong>方法和<strong><code>get</code></strong>方法,<code>Xcode</code>系统会自动生成<strong><code>set</code></strong>和<strong><code>get</code></strong>方法。同时生成一个下划线成员变量</p>
 </blockquote>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>如果使用frame,计算的话肯定也是可以达到相同结果的,可是<code>麻烦</code>,所以今天就使用<code>Masonry</code>来完成这个需求</p>
 <ul>
-<li>首先, 我们一般都是自定义<code>View</code>,在这个<code>View</code>设置好约束</li>
+<li>你调用的时候，赋值的值是多少就是多少</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person *p = [[Person alloc] init];</span><br><span class="line">p.height = 170.0;</span><br><span class="line">NSLog(@&quot;%f&quot;,p.height); //打印得170.0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果你自己写了<strong><code>set</code></strong>方法，却没有在里面做任何操作，会默认调用<strong><code>_height</code></strong>。所有的成员变量初始值都是0.所以即便你在调用<strong><code>set</code></strong>方法的时候赋值，打印出来也是0</li>
 </ul>
 <a id="more"></a>
-<p><strong>重要</strong></p>
+<p><strong>Set方法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- (void)setHeight:(CGFloat)height &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person *p = [[Person alloc] init];</span><br><span class="line">p.height = 170.0;</span><br><span class="line">NSLog(@&quot;%f&quot;,p.height); //打印得0.0</span><br></pre></td></tr></table></figure>
 <ul>
-<li>这个自定义<code>View</code>,里面的子控件一定要有从<code>top</code>到<code>bottom</code>连起来的那一条线,就像盖房子一样的,第一个子控件到最后的个子控件,让<code>tableHeaderView</code>知道<code>top</code>到<code>bottom</code>的位置</li>
+<li>如果你自己写了<strong><code>get</code></strong>方法，在里面return 180.0。你在调用<strong><code>get</code></strong>方法的时候赋值，打印出来也是就是你<strong><code>get</code></strong>方法里面返回的值180.0</li>
 </ul>
-<h2 id="自定义View代码"><a href="#自定义View代码" class="headerlink" title="自定义View代码"></a>自定义<code>View</code>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 这个是第一个子控件</span><br><span class="line">[self addSubview:self.oneLabel];</span><br><span class="line">[self.oneLabel mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.top.left.right.mas_equalTo(self).offset(0);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">// 这个是第二个子控件</span><br><span class="line">[self addSubview:self.oneImageView];</span><br><span class="line">[self.oneImageView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.top.mas_equalTo(self.oneLabel.mas_bottom).offset(0);</span><br><span class="line">    make.left.right.mas_equalTo(self).offset(0);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">// 重点,必须设置这个约束,告诉当前view的位置</span><br><span class="line">[self mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.bottom.mas_equalTo(self.oneImageView.mas_bottom).offset(0);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-<h2 id="Controller代码"><a href="#Controller代码" class="headerlink" title="Controller代码"></a><code>Controller</code>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 必须给headerView设置宽度,不然headView是不知道到底有宽</span><br><span class="line">self.tableView.tableHeaderView = self.headView;</span><br><span class="line">[self.headView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.width.equalTo(self.tableView);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-<h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><blockquote>
-<p>如果确定子控件底部到父视图的位置,就不需要设置父视图底部位置,如果不确定底部位置就需要设置父视图底部位置</p>
+<p><strong>Get方法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- (CGFloat)height &#123;</span><br><span class="line">	return 180.0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person *p = [[Person alloc] init];</span><br><span class="line">p.height = 170.0;</span><br><span class="line">NSLog(@&quot;%f&quot;,p.height); //打印得180.0</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>=</code>左边<strong><code>height</code></strong>是调用<strong><code>set</code></strong>方法</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[self addSubview:self.oneImageView];</span><br><span class="line">[self.oneImageView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.top.mas_equalTo(self.oneLabel.mas_bottom).offset(0);</span><br><span class="line">    make.left.right.bottom.mas_equalTo(self).offset(0);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">// 重点,必须设置这个约束,告诉当前view的位置</span><br><span class="line">//[self mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">//    make.bottom.mas_equalTo(self.oneImageView.mas_bottom).offset(0);</span><br><span class="line">//&#125;];</span><br></pre></td></tr></table></figure>
-<h2 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h2><blockquote>
-<p>如果出现bug先设置好<code>Masonry</code>的<code>TableHeadView</code>,再调用<code>View</code>的<code>layoutIfNeeded</code></p>
+<blockquote>
+<p><code>=</code>右边<strong><code>height</code></strong>是调用<strong><code>get</code></strong>方法</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[self.view addSubview:self.tableView];</span><br><span class="line">[self.tableView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.edges.mas_equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">self.tableView.tableHeaderView = self.headView;</span><br><span class="line">[self.headView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    make.width.equalTo(self.tableView);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[self.view setNeedsLayout];</span><br><span class="line">[self.view layoutIfNeeded];</span><br><span class="line"></span><br><span class="line">self.tableView.tableHeaderView = self.headView;</span><br></pre></td></tr></table></figure>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="/2018/05/05/Masonry自适应tableHeaderView/tableHeaderView.gif" alt="Masonry"></p>
+<blockquote>
+<p>如果你自己同时生成了<strong><code>set</code></strong>和<strong><code>get</code></strong>方法，那系统就不会生成<code>下划线成员变量</code></p>
+</blockquote>
+<ul>
+<li>手动实现<strong><code>set</code></strong>方法和<strong><code>get</code></strong>方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@synthesize height = _height;</span><br><span class="line"></span><br><span class="line">- (void)setHeight:(CGFloat)height &#123;</span><br><span class="line">    _height = height;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (CGFloat)height &#123;</span><br><span class="line">    return _height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Runtime"><a href="#Runtime" class="headerlink" title="Runtime"></a>Runtime</h2><p><code>Runtime</code>key值使用C语言字符串</p>
+<p><code>static char imageURLKey</code> = <code>&amp;imageURLKey</code></p>
+<p><code>static char imageURLKey = &quot;imageURLKey&quot;</code></p>
 
       
     </div>
@@ -425,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/05/Hexo插入图片/" rel="next" title="Hexo插入图片">
-                <i class="fa fa-chevron-left"></i> Hexo插入图片
+              <a href="/2018/06/04/iOS强制横屏实践/" rel="next" title="iOS强制横屏实践">
+                <i class="fa fa-chevron-left"></i> iOS强制横屏实践
               </a>
             
           </div>
@@ -435,8 +447,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/08/Masonry设置UIScrollView的contentSize/" rel="prev" title="Masonry设置UIScrollView的contentSize,实现复杂页面开发">
-                Masonry设置UIScrollView的contentSize,实现复杂页面开发 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/08/ios之界面之间的数据正逆向传递方法/" rel="prev" title="ios之界面之间的数据正逆向传递方法">
+                ios之界面之间的数据正逆向传递方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -576,7 +588,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如题"><span class="nav-number">1.</span> <span class="nav-text">如题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解答"><span class="nav-number">2.</span> <span class="nav-text">解答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义View代码"><span class="nav-number">3.</span> <span class="nav-text">自定义View代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller代码"><span class="nav-number">4.</span> <span class="nav-text">Controller代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案二"><span class="nav-number">5.</span> <span class="nav-text">方案二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案三"><span class="nav-number">6.</span> <span class="nav-text">方案三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果图"><span class="nav-number">7.</span> <span class="nav-text">效果图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Runtime"><span class="nav-number">2.</span> <span class="nav-text">Runtime</span></a></li></ol></div>
             
 
           </div>
