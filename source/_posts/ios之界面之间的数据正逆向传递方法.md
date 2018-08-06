@@ -1,5 +1,5 @@
 ---
-title: ios之界面之间的数据正逆向传递方法
+title: iOS之界面之间的数据正逆向传递方法
 date: 2018-06-08 17:02:22
 tags: "iOS"
 categories: "iOS基础"
